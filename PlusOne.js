@@ -59,6 +59,9 @@ console.log(plusOne([4, 3, 2, 1]));
 console.log(plusOne([9]));
 
 /* 
+
+15m
+
 Leetcode submission details
 https://leetcode.com/submissions/detail/642720795/?from=explore&item_id=559
 
