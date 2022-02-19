@@ -3,31 +3,12 @@
  * @return {boolean}
  */
 var isValidSudoku = function (board) {
-  // validate horizontally and vertically
-  let tempHor = new Set();
-  let tempVer = new Set();
-
-  for (let i = 0; i < 9; i++) {
-    tempHor.clear();
-    tempVer.clear();
-    console.log(tempHor);
-    console.log(tempVer);
-    for (let j = 0; j < 9; j++) {
-      if (tempHor.has(board[i][j])) {
-        return false;
-      } else if (tempVer.has(board[j][i])) {
-        return false;
-      } else {
-      }
-      if (board[i][j] !== ".") {
-        tempHor.add(board[i][j]);
-        console.log(tempHor);
-      }
-      if (board[j][i] !== ".") {
-        tempVer.add(board[j][i]);
-        console.log(tempVer);
-      }
-    }
+  // create sets to store values and check if they already exist
+  const row = [],
+    col = [],
+    sub = [];
+  for (let i = 0; i < board.length; i++) {
+    const 
   }
 
   // returns true if passes all tests
