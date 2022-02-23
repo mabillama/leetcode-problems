@@ -21,7 +21,7 @@ Output: -1 */
 var firstUniqChar = function (s) {
   const uniqSet = new Map();
 
-  // iterate string
+  // iterate string adding a key-value pair stating how many times char was seen in the string
   for (let c of s) {
     if (!uniqSet.has(c)) {
       uniqSet.set(c, 1);
@@ -30,31 +30,27 @@ var firstUniqChar = function (s) {
     }
   }
 
-  console.log(uniqSet);
+  // Creating value and keys iterator. This could be done with a Map.prototype.forEach(), maybe?
+
   const itVal = uniqSet.values();
   const itKey = uniqSet.keys();
 
+  // Iterating the Map to check if any value is equal to 1. If that is the case, it means that the character appear only once and the function should return the position of the original string in which it appears.
   for (let i of uniqSet) {
     let actualVal = itVal.next().value;
     let actualKey = itKey.next().value;
 
-    console.log(i);
-    console.log(actualVal);
-    console.log(actualKey);
     if (actualVal === 1) {
       return s.indexOf(actualKey);
     }
-    // console.log(actualKey);
   }
 
   return -1;
-
-  // while finding doubles continue
-  // if no double returns position
-  // if ended -1
 };
 
 // firstUniqChar("loveleetcode");
 // console.log(firstUniqChar("loveleetcode"));
 
-console.log(firstUniqChar("aadadaad"));
+console.log(firstUniqChar("leetcode"));
+
+// This first attempt is not really good and could be refined to be more legible.
